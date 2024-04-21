@@ -82,6 +82,33 @@
 </div>
 <!-- End 1st Product Slider -->
 
+
+
+<!-- 2nd Product Slider -->
+<div class="m-3">
+    <h2>aiQuest | saree</h2>
+    <!-- Slider 1 -->
+    <div class="owl-carousel" id="slider1">
+        {% for sa in sare %}
+        <a href="{% url 'product-detail' sa.id %}" class="btn">
+            <div class="item"><img src="{{sa.product_img.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{sa.title}}</span><br><span class="fs-5">Tk. {{sa.discount_price}}</span></div>
+        </a>
+       {% endfor %}
+    </div>
+</div>
+<div class="m-3">
+    <h2>aiQuest |Lehenga</h2>
+    <!-- Slider 1 -->
+    <div class="owl-carousel" id="slider1">
+        {% for la in lahenga %}
+        <a href="{% url 'product-detail' la.id %}" class="btn">
+            <div class="item"><img src="{{la.product_img.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{la.title}}</span><br><span class="fs-5">Tk. {{la.discount_price}}</span></div>
+        </a>
+       {% endfor %}
+    </div>
+</div>
 <!-- Payment Info Section -->
 <div class="container my-5">
     <div class="row">
@@ -116,31 +143,5 @@
     </div>
 </div>
 <!-- End Payment Info Section -->
-
-<!-- 2nd Product Slider -->
-<div class="m-3">
-    <h2>aiQuest | saree</h2>
-    <!-- Slider 1 -->
-    <div class="owl-carousel" id="slider1">
-        {% for sa in sare %}
-        <a href="{% url 'product-detail' sa.id %}" class="btn">
-            <div class="item"><img src="{{sa.product_img.url}}" alt="" height="200px"><span
-                    class="fw-bold">{{sa.title}}</span><br><span class="fs-5">Tk. {{sa.discount_price}}</span></div>
-        </a>
-       {% endfor %}
-    </div>
-</div>
-<div class="m-3">
-    <h2>aiQuest |Lehenga</h2>
-    <!-- Slider 1 -->
-    <div class="owl-carousel" id="slider1">
-        {% for la in lahenga %}
-        <a href="{% url 'product-detail' la.id %}" class="btn">
-            <div class="item"><img src="{{la.product_img.url}}" alt="" height="200px"><span
-                    class="fw-bold">{{la.title}}</span><br><span class="fs-5">Tk. {{la.discount_price}}</span></div>
-        </a>
-       {% endfor %}
-    </div>
-</div>
 <!-- End 3rd Product Slider -->
 {% endblock main-content %}
