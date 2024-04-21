@@ -1,0 +1,32 @@
+{% extends 'Shop/base.html' %}
+{% load static %}
+{% block title %}Product Detail{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-6 text-center align-self-center">
+            <img src="{{produc_d.product_img.url}}" alt="" class="img-fluid img-thumbnail">
+        </div>
+        <div class="col-sm-5 offset-sm-1">
+            <h2>{{produc_d.title}}</h2>
+            <hr>
+            <p>{{produc_d.discription}}</p> <br>
+            <h4>Tk. {{produc_d.discount_price}} <small class="fw-light text-decoration-line-through">{{produc_d.mein_price}}</small></h4> <br>
+            <!--<a href="{% url 'add-to-cart' %}" class="btn btn-primary shadow px-5 py-2">Add to Cart</a>-->
+            <form action="/add-to-card" class='d-inline'>
+
+                <input type="hidden" name="prod_id" value="{{produc_d.id}}" id= 'prod_id'>
+                <button type="submit" class="btn btn-primary shadow px-5 py-2" > Add to Cart</button>
+
+            </form>
+            <a href="{% url 'buy-now' %}" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
+            <h5 class="mt-5">Available Offers</h5>
+            <ul>
+                <li>Bkash Offer 5% Unlimited Cashback on Payment</li>
+                <li>Special Price Get extra Tk.5000 off (price inclusive of discount)</li>
+                <li>Partner Offer Tk. 1000 Gift Card on Every 1000th Transaction with Bkash, Nagad.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
